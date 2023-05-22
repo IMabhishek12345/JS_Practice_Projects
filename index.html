@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>My weather app</title>
+  </head>
+  <body>
+    <h1 class="heading"> Welcome to weather app</h1>
+    <div class="contentDiv">
+      <h2>Enter the city of your choice</h2>
+      <input  id="inputCity" type="text" placeholder="Enter city" />
+      <button onClick="userAction()">Search</button>
+      <h3>The temperature of the entered city is</h3> 
+       <span id="temp_c" ></span>,
+       <span id="temp_f" ></span>
+       <img id="imageOutlook" src="" alt="">
+    </div>
+    <script src="index.js"></script>
+     
+  </body>
+</html>
