@@ -4,6 +4,8 @@ let city=document.getElementById("inputCity");
 
 
 let userAction=async()=>{
+     //  counter+=1; 
+     //  console.log("fecthing data"+ counter);
      
      let response=await fetch(`https://api.weatherapi.com/v1/current.json?key=3830c7011519423ab9653234232205&q=${city.value}`);
      let result= await response.json();
@@ -13,9 +15,19 @@ let userAction=async()=>{
      document.getElementById("temp_c").innerHTML=result.current.feelslike_c+"°C";
      document.getElementById("temp_f").innerHTML=result.current.feelslike_f+"°F";
      document.getElementById("imageOutlook").src=result.current.condition.icon;
-     
-     
-     
-
-    
 }
+
+const dosomeMagic=(userAction,d)=>{
+     let timer;
+     return (...args)=>{
+          
+          clearTimeout(timer);
+         
+          timer=setTimeout(()=>{
+          
+          userAction.apply(this,args);
+          },d)
+     }
+}
+
+const betterFunction=dosomeMagic(userAction,250);
